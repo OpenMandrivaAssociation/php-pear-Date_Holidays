@@ -5,7 +5,7 @@
 
 Summary:	%{_pearname} - driver based class to calculate holidays
 Name:		php-pear-%{_pearname}
-Version:	0.16.0
+Version:	0.17.0
 Release:	%mkrel 1
 License:	PHP License
 Group:		Development/PHP
@@ -90,5 +90,3 @@ rm -rf %{buildroot}
 %{_datadir}/pear/%{_class}/*.php
 %{_datadir}/pear/%{_class}/%{_subclass}
 %{_datadir}/pear/packages/%{_pearname}.xml
-
-
