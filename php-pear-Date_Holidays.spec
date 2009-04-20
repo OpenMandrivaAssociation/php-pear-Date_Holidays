@@ -5,8 +5,8 @@
 
 Summary:	%{_pearname} - driver based class to calculate holidays
 Name:		php-pear-%{_pearname}
-Version:	0.17.1
-Release:	%mkrel 4
+Version:	0.21.2
+Release:	%mkrel 1
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
@@ -14,6 +14,25 @@ URL:		http://pear.php.net/package/Date_Holidays/
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
+Suggests:	php-pear-Date_Holidays_Austria
+Suggests:	php-pear-Date_Holidays_Brazil
+Suggests:	php-pear-Date_Holidays_Denmark
+Suggests:	php-pear-Date_Holidays_Discordian
+Suggests:	php-pear-Date_Holidays_EnglandWales
+Suggests:	php-pear-Date_Holidays_Germany
+Suggests:	php-pear-Date_Holidays_Iceland
+Suggests:	php-pear-Date_Holidays_Ireland
+Suggests:	php-pear-Date_Holidays_Italy
+Suggests:	php-pear-Date_Holidays_Japan
+Suggests:	php-pear-Date_Holidays_Netherlands
+Suggests:	php-pear-Date_Holidays_Norway
+Suggests:	php-pear-Date_Holidays_PHPdotNet
+Suggests:	php-pear-Date_Holidays_Romania
+Suggests:	php-pear-Date_Holidays_Slovenia
+Suggests:	php-pear-Date_Holidays_Sweden
+Suggests:	php-pear-Date_Holidays_Ukraine
+Suggests:	php-pear-Date_Holidays_UNO
+Suggests:	php-pear-Date_Holidays_USA
 BuildArch:	noarch
 BuildRequires:	dos2unix
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -45,17 +64,13 @@ find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix
 %install
 rm -rf %{buildroot}
 
-install -d %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/{Driver,Filter,lang/{Christian,Germany,Sweden,UNO,USA}}
+install -d %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/{Driver,Filter,lang/Christian}
 
 install %{_pearname}-%{version}/*.php %{buildroot}%{_datadir}/pear/%{_class}
 install %{_pearname}-%{version}/%{_subclass}/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}
 install %{_pearname}-%{version}/%{_subclass}/Driver/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Driver
 install %{_pearname}-%{version}/%{_subclass}/Filter/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Filter
 install %{_pearname}-%{version}/lang/Christian/* %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/lang/Christian
-install %{_pearname}-%{version}/lang/Germany/* %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/lang/Germany
-install %{_pearname}-%{version}/lang/Sweden/* %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/lang/Sweden
-install %{_pearname}-%{version}/lang/UNO/* %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/lang/UNO
-install %{_pearname}-%{version}/lang/USA/* %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/lang/USA
 
 install -d %{buildroot}%{_datadir}/pear/packages
 install -m0644 package.xml %{buildroot}%{_datadir}/pear/packages/%{_pearname}.xml
@@ -87,6 +102,15 @@ rm -rf %{buildroot}
 %doc %{_pearname}-%{version}/examples
 %doc %{_pearname}-%{version}/pear-dh-compile-translationfile
 %doc %{_pearname}-%{version}/pear-dh-ini2xml
+%dir %{_datadir}/pear/%{_class}/%{_subclass}
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Driver
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Filter
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/lang
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/lang/Christian
 %{_datadir}/pear/%{_class}/*.php
-%{_datadir}/pear/%{_class}/%{_subclass}
+%{_datadir}/pear/%{_class}/%{_subclass}/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/Driver/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/Filter/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/lang/Christian/*.xml
+%{_datadir}/pear/%{_class}/%{_subclass}/lang/Christian/*.ser
 %{_datadir}/pear/packages/%{_pearname}.xml
