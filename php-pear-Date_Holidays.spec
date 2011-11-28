@@ -3,13 +3,13 @@
 %define		upstream_name	%{_class}_%{_subclass}
 
 Name:		php-pear-%{upstream_name}
-Version:	0.21.2
-Release:	%mkrel 5
+Version:	0.21.5
+Release:	%mkrel 1
 Summary:	Driver based class to calculate holidays
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/Date_Holidays/
-Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tar.bz2
+Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
