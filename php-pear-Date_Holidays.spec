@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.21.5
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Driver based class to calculate holidays
 License:	PHP License
 Group:		Development/PHP
@@ -13,25 +13,12 @@ Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
-Suggests:	php-pear-Date_Holidays_Austria
-Suggests:	php-pear-Date_Holidays_Brazil
-Suggests:	php-pear-Date_Holidays_Denmark
-Suggests:	php-pear-Date_Holidays_Discordian
-Suggests:	php-pear-Date_Holidays_EnglandWales
-Suggests:	php-pear-Date_Holidays_Germany
-Suggests:	php-pear-Date_Holidays_Iceland
-Suggests:	php-pear-Date_Holidays_Ireland
-Suggests:	php-pear-Date_Holidays_Italy
-Suggests:	php-pear-Date_Holidays_Japan
-Suggests:	php-pear-Date_Holidays_Netherlands
-Suggests:	php-pear-Date_Holidays_Norway
-Suggests:	php-pear-Date_Holidays_PHPdotNet
-Suggests:	php-pear-Date_Holidays_Romania
-Suggests:	php-pear-Date_Holidays_Slovenia
-Suggests:	php-pear-Date_Holidays_Sweden
-Suggests:	php-pear-Date_Holidays_Ukraine
-Suggests:	php-pear-Date_Holidays_UNO
-Suggests:	php-pear-Date_Holidays_USA
+%define pear_deps php-pear-Date_Holidays_Austria php-pear-Date_Holidays_Brazil php-pear-Date_Holidays_Denmark php-pear-Date_Holidays_Discordian php-pear-Date_Holidays_EnglandWales php-pear-Date_Holidays_Germany php-pear-Date_Holidays_Iceland php-pear-Date_Holidays_Ireland php-pear-Date_Holidays_Italy php-pear-Date_Holidays_Japan php-pear-Date_Holidays_Netherlands php-pear-Date_Holidays_Norway php-pear-Date_Holidays_PHPdotNet php-pear-Date_Holidays_Romania php-pear-Date_Holidays_Slovenia php-pear-Date_Holidays_Sweden php-pear-Date_Holidays_UNO php-pear-Date_Holidays_USA php-pear-Date_Holidays_Ukraine
+%if %mdkversion >= 200900
+Suggests:	%{pear_deps}
+%else
+Requires:	%{pear_deps}
+%endif
 BuildArch:	noarch
 BuildRequires:  php-pear
 BuildRoot:	%{_tmppath}/%{name}-%{version}
