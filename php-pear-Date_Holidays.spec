@@ -3,13 +3,13 @@
 %define		upstream_name	%{_class}_%{_subclass}
 
 Name:		php-pear-%{upstream_name}
-Version:	0.21.5
-Release:	%mkrel 4
+Version:	0.21.8
+Release:	1
 Summary:	Driver based class to calculate holidays
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/Date_Holidays/
-Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
+Source0:	http://download.pear.php.net/package/Date_Holidays-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -156,4 +156,5 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 * Tue Jul 19 2005 Oden Eriksson <oeriksson@mandriva.com> 0.13.0-1mdk
 - initial Mandriva package (PLD import)
+
 
