@@ -6,7 +6,7 @@
 Summary:	Driver based class to calculate holidays
 Name:		php-pear-%{modname}
 Version:	0.21.8
-Release:	1
+Release:	2
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/Date_Holidays/
