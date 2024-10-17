@@ -9,7 +9,7 @@ Version:	0.21.8
 Release:	13
 License:	PHP License
 Group:		Development/PHP
-Url:		http://pear.php.net/package/Date_Holidays/
+Url:		https://pear.php.net/package/Date_Holidays/
 Source0:	http://download.pear.php.net/package/Date_Holidays-%{version}.tgz
 BuildArch:	noarch
 BuildRequires:  php-pear
